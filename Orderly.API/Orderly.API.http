@@ -1,0 +1,24 @@
+@host = http://localhost
+@port = 5292
+
+@Orderly_API_HostAddress = https://localhost:7174
+
+GET {{Orderly_API_HostAddress}}/weatherforecast/
+Accept: application/json
+Guid: {{$guid}}
+LocalDate: {{$datetime iso8601}}
+Random-int: {{$randomInt}}
+
+###
+
+POST {{Orderly_API_HostAddress}}/weatherforecast/generate?count=0
+Content-Type: application/json
+
+{
+  "MinTemperatureC" : -5,
+  "MaxTemperatureC" : 50
+}
+
+###
+GET {{Orderly_API_HostAddress}}/api/products/123
+Accept: application/json
